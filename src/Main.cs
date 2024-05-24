@@ -36,5 +36,8 @@ public class Main : Node {
         windDir += desiredDirection * delta;
         windDir = windDir.Normalized();
     }
-    
+
+    public float getAngleInRadians() {
+        return new Vector2(-windDir.x, windDir.y).AngleTo(Vector2.Up);
+    }
 }
