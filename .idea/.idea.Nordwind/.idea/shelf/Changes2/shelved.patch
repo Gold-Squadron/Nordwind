@@ -1,0 +1,23 @@
+Index: .idea/.idea.Nordwind.dir/.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.Nordwind.dir/.idea/.gitignore b/.idea/.idea.Nordwind.dir/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1716581477802)
++++ b/.idea/.idea.Nordwind.dir/.idea/.gitignore	(date 1716581477802)
+@@ -0,0 +1,13 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Rider ignored files
++/projectSettingsUpdater.xml
++/modules.xml
++/.idea.Nordwind.iml
++/contentModel.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
