@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1c696f4-39ab-4ab7-924a-f4495987005e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
+    <list default="true" id="c1c696f4-39ab-4ab7-924a-f4495987005e" name="Changes" comment="Added Main.cs and basic wind control">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Nordwind.dir/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Nordwind/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compass.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/textures/compass-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/textures/compass-bg.png.import" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/textures/compass-fg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/textures/compass-fg.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Nordwind/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Nordwind/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenes/Main.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Main.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +22,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -30,7 +42,7 @@
   "keyToString": {
     "Godot 3 Start and Debug.Player.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "1-compass",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -85,8 +97,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716581490025</updated>
-      <workItem from="1716581491080" duration="4315000" />
+      <workItem from="1716581491080" duration="5350000" />
     </task>
+    <task id="LOCAL-00001" summary="Added Main.cs and basic wind control">
+      <option name="closed" value="true" />
+      <created>1716588622387</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716588622387</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,5 +117,7 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Added Main.cs and basic wind control" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Main.cs and basic wind control" />
   </component>
 </project>
