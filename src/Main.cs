@@ -35,7 +35,6 @@ public class Main : Node {
 
         windDir += desiredDirection * delta;
         windDir = windDir.Normalized();
-        GD.Print(windDir);
     }
     
 }
