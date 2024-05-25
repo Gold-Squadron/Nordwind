@@ -4,6 +4,8 @@ public class Main : Node {
 
     [Export]
     public Vector2 windDir = Vector2.Up;
+    [Export]
+    public float windSpeed = 80;
 
     public override void _Ready() {
         GD.Print("Main Level is initializing.");
@@ -33,8 +35,8 @@ public class Main : Node {
             desiredDirection.y -= 1;
         }
 
-        windDir += desiredDirection * delta;
-        windDir = windDir.Normalized();
+        windDir += windSpeed * desiredDirection * delta;
+        windDir = windDir.Normalized() * windSpeed;
     }
 
     public float getAngleInRadians() {
