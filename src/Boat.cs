@@ -9,19 +9,24 @@ public class Boat : KinematicBody2D {
     
     public override void _Ready() {
         main = GetNode<Main>("/root/Main");
-        velocity = Vector2.Zero;
+        velocity = Vector2.Down * (float)(MAX_SPEED * 0.8f);
     }
 
     public override void _PhysicsProcess(float delta) {
-        GD.Print(velocity.Dot(main.windDir));
-        velocity += (main.windDir * delta);
-        velocity = velocity.LimitLength(MAX_SPEED);
+        Vector2 dir = (main.windDir * 0.3f + velocity).Normalized();
+        velocity = velocity.Normalized() * (MAX_SPEED);
+        velocity += (dir);
+        GD.Print(velocity);
+        if (Input.IsPhysicalKeyPressed((int) KeyList.Space)) {
+            return;
+        }
         var collisionResult = MoveAndCollide(velocity * delta);
         if (collisionResult != null) {
             //GD.
             GetTree().ReloadCurrentScene();
         }
-        Rotation = main.getAngleInRadians();
+        
+        Rotation = Main.getAngleInRadians(velocity);
     }
 
 }
