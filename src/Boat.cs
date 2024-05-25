@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Boat : RigidBody2D {
+public class Boat : KinematicBody2D {
 
     private const float MAX_SPEED = 40;
     private Main main;
@@ -12,11 +12,15 @@ public class Boat : RigidBody2D {
         velocity = Vector2.Zero;
     }
 
-    public override void _Process(float delta) {
+    public override void _PhysicsProcess(float delta) {
         GD.Print(velocity.Dot(main.windDir));
         velocity += (main.windDir * delta);
         velocity = velocity.LimitLength(MAX_SPEED);
-        Position += velocity * delta;
+        var collisionResult = MoveAndCollide(velocity * delta);
+        if (collisionResult != null) {
+            //GD.
+            GetTree().ReloadCurrentScene();
+        }
         Rotation = main.getAngleInRadians();
     }
 
