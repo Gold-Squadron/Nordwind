@@ -1,19 +1,54 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Main.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Compass.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Boat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/StaticObject.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Fels.tscn" type="PackedScene" id=5]
+[ext_resource path="res://textures/stein_oder_felsen.png" type="Texture" id=8]
+[ext_resource path="res://textures/wasser.png" type="Texture" id=9]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/fix_try.png-7a9400cf90edfaef2c39a98e869e3e99.stex"
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
 windDir = Vector2( 1, 0 )
 
 [node name="Compass" parent="." instance=ExtResource( 2 )]
+position = Vector2( 135, 876 )
 
 [node name="Boat" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1097, 673 )
 
 [node name="Boat2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 323, 329 )
 
 [node name="Boat3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 772, 110 )
+position = Vector2( 1000, 75 )
+
+[node name="StaticObject" parent="." instance=ExtResource( 4 )]
+position = Vector2( 667, 265 )
+
+[node name="FixTry" type="Sprite" parent="."]
+visible = false
+position = Vector2( 806, 515 )
+texture = SubResource( 1 )
+
+[node name="SteinOderFelsen" type="Sprite" parent="."]
+visible = false
+position = Vector2( 461, 454 )
+texture = ExtResource( 8 )
+
+[node name="Wasser" type="Sprite" parent="."]
+visible = false
+position = Vector2( 704, 332 )
+z_index = -1
+texture = ExtResource( 9 )
+
+[node name="StaticObject3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 557, 838 )
+
+[node name="StaticObject2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1203, 427 )
