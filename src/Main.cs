@@ -85,6 +85,8 @@ public class Main : Node {
 
     private void _on_Target_all_boats_reached_target() {
         GD.Print("YOU DID IT!");
+        GetNode<Control>("HUD/LevelEnd").Visible = true;
+        GetNode<Button>("HUD/LevelEnd/CenterContainer/VBoxContainer/NextLevel").Visible = Global.CurrentLevel < Global.LevelCount;
     }
 
 }
