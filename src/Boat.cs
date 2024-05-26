@@ -48,7 +48,7 @@ public class Boat : KinematicBody2D {
                 GetParent().RemoveChild(this);
             }
             if (collisionResult != null) {
-                if (collisionResult.Collider is Boat) {
+                if (collisionResult.Collider is Boat boat && boat.type != -1) {
                     Main.AcitveBoatCounter = 0;
                     GetTree().ReloadCurrentScene();
                 } else {

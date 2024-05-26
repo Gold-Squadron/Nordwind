@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/components/MovingObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Main.cs" type="Script" id=6]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 6 )
+windDir = Vector2( 1, 0 )
+windSpeed = 120.0
+
+[node name="Follower" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1041, 515 )
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="Target" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2161, 521 )
+radius = 140.0
+
+[node name="Boat" parent="." instance=ExtResource( 5 )]
+position = Vector2( 571, 519 )
+MAX_SPEED = 90.0
+
+[node name="Node" type="Node" parent="."]
+
+[node name="MovingObject" parent="." instance=ExtResource( 1 )]
+position = Vector2( 941, 505 )
+speed = 60.0
+
+[node name="MovingObject4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1617, 388 )
+speed = 60.0
+
+[node name="MovingObject5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1834, 861 )
+speed = 60.0
+
+[node name="MovingObject6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1721, 120 )
+speed = 60.0
+
+[node name="MovingObject7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1404, 632 )
+speed = 60.0
+
+[node name="MovingObject8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1221, 315 )
+speed = 60.0
+
+[node name="MovingObject9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1167, 852 )
+speed = 60.0
+
+[node name="MovingObject3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 553, 824 )
+speed = 60.0
+
+[node name="MovingObject2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 559, 194 )
+speed = 60.0

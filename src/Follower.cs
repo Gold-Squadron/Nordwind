@@ -39,8 +39,8 @@ public class Follower : Node2D {
       foreach (var boat in boats) {
           Vector2 distance = (Position - boat.Position).Abs();
 
-          if (distance.x > 600 || distance.y > 300) {
-              Position = middle;
+          if (distance.x > 500 || distance.y > 300) {
+              Position = middle.LinearInterpolate(Position, 0.15f);
               return;
           }
       }
