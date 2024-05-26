@@ -11,6 +11,8 @@ namespace Nordwind {
                     return Colors.Blue;
                 case 2:
                     return Colors.Green;
+                case -1:
+                    return Colors.Black;
                 default:
                     return Colors.Red;
             }
