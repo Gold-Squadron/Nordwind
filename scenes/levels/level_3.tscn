@@ -29,7 +29,6 @@ position = Vector2( 1288, 219 )
 radius = 140.0
 
 [node name="HUD" parent="." instance=ExtResource( 12 )]
-visible = false
 
 [node name="Target" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1284, 700 )

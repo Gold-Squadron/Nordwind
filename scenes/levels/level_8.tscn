@@ -108,7 +108,6 @@ scale = Vector2( 3.55125, 1.89833 )
 position = Vector2( 2243, 429 )
 
 [node name="HUD" parent="." instance=ExtResource( 12 )]
-visible = false
 
 [node name="Target" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2286, 600 )
