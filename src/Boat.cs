@@ -31,7 +31,7 @@ public class Boat : KinematicBody2D {
 
     public override void _Process(float delta) {
         if (!active && alpha > 0) {
-            alpha -= 1F/100F;
+            alpha -= 1F/50F;
             GetNode<Sprite>("Sprite").Modulate = new Color(1, 1, 1, alpha);
             Vector2 dir = (main.windDir * 0.3f + velocity).Normalized();
             velocity = velocity.Normalized() * MAX_SPEED + dir;
