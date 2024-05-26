@@ -31,15 +31,6 @@ radius = 140.0
 [node name="StaticObject4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 633, 773 )
 
-[node name="StaticObject" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1145, 375 )
-
-[node name="StaticObject2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1745, 748 )
-
-[node name="StaticObject3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2145, 265 )
-
 [node name="Boat" parent="." instance=ExtResource( 3 )]
 position = Vector2( 571, 519 )
 MAX_SPEED = 50.0

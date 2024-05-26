@@ -1,0 +1,263 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/Main.cs" type="Script" id=1]
+[ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/components/Spawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
+
+[sub_resource type="CSharpScript" id=1]
+script/source = "using Godot;
+using System;
+using System.Data.SqlClient;
+using Nordwind;
+
+public class Boat : KinematicBody2D {
+
+    [Export] private float MAX_SPEED = 40;
+    private Main main;
+    [Export] public Vector2 velocity;
+    private Vector2 initialPosition;
+
+    [Export] public int type = 0;
+    [Export] public int maxDistance = 600;
+    
+    public bool active = true;
+    private float alpha = 1;
+    
+    public override void _Ready() {
+        main = GetNode<Main>(\"/root/Main\");
+        GetNode<Sprite>(\"Sprite/Sail\").Modulate = Util.getColor(type).LinearInterpolate(Colors.Beige, 0.45f);
+        if (type == -1) { // AI Mode
+            initialPosition = Position;
+            return;
+        }
+
+        
+        Main.AcitveBoatCounter++;
+        velocity = main.windDir;// * (float)(MAX_SPEED * 0.3f);
+    }
+
+    public override void _Process(float delta) {
+        if (!active && alpha > 0) {
+            alpha -= 1F/100F;
+            GetNode<Sprite>(\"Sprite\").Modulate = new Color(1, 1, 1, alpha);
+            Vector2 dir = (main.windDir * 0.3f + velocity).Normalized();
+            velocity = velocity.Normalized() * MAX_SPEED + dir;
+            var collisionResult = MoveAndCollide(velocity * delta);
+        }
+    }
+
+    public override void _PhysicsProcess(float delta) {
+        var collisionResult = MoveAndCollide(velocity * delta);
+        Rotation = Main.getAngleInRadians(velocity);
+        
+        if (type == -1) { // AI Mode
+            if (Position.DistanceSquaredTo(initialPosition) > maxDistance * maxDistance) {
+                GetParent().RemoveChild(this);
+            }
+            if (collisionResult != null) {
+                if (collisionResult.Collider is Boat) {
+                    Main.AcitveBoatCounter = 0;
+                    GetTree().ReloadCurrentScene();
+                } else {
+                    GetParent().RemoveChild(this);
+                }
+            }
+            return;
+        }
+        Vector2 dir = (main.windDir * 0.3f + velocity).Normalized();
+        velocity = velocity.Normalized() * (MAX_SPEED);
+        velocity += (dir);
+        // GD.Print(velocity);
+        if (Input.IsPhysicalKeyPressed((int) KeyList.Space)) {
+            return;
+        }
+        
+        if (collisionResult != null) {
+            Main.AcitveBoatCounter = 0;
+            GetTree().ReloadCurrentScene();
+        }
+        
+    }
+
+    public void Deactivate() {
+        active = false;
+        RemoveChild(GetNode<CollisionShape2D>(\"CollisionShape2D\"));
+    }
+
+}"
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+windDir = Vector2( 1, 0 )
+windSpeed = 120.0
+
+[node name="Follower" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2243, 429 )
+
+[node name="HUD" parent="." instance=ExtResource( 12 )]
+
+[node name="Target" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2286, 600 )
+radius = 140.0
+
+[node name="Boat" parent="." instance=ExtResource( 3 )]
+position = Vector2( 755, 557 )
+MAX_SPEED = 60.0
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Spawner" parent="." instance=ExtResource( 4 )]
+position = Vector2( 359, 239 )
+delayInMs = 50000
+distance = 15000
+velocity = Vector2( 71, 0 )
+
+[node name="Spawner3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 205, 313 )
+delayInMs = 50000
+distance = 15000
+velocity = Vector2( 71, 0 )
+
+[node name="Spawner5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 281, 399 )
+delayInMs = 50000
+distance = 15000
+velocity = Vector2( 71, 0 )
+
+[node name="Spawner7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 209, 507 )
+delayInMs = 50000
+distance = 15000
+velocity = Vector2( 71, 0 )
+
+[node name="Spawner10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 297, 677 )
+delayInMs = 50000
+distance = 15000
+velocity = Vector2( 71, 0 )
+
+[node name="Spawner11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 211, 779 )
+delayInMs = 50000
+distance = 15000
+velocity = Vector2( 71, 0 )
+
+[node name="Spawner12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1498, 1099 )
+delayInMs = 10000
+distance = 5000
+velocity = Vector2( 25, -50 )
+
+[node name="Spawner13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2325, 1119 )
+delayInMs = 7000
+distance = 5000
+velocity = Vector2( 25, -50 )
+
+[node name="StaticObject" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1696, 374 )
+
+[node name="StaticObject2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1711, 465 )
+
+[node name="StaticObject4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1774, 407 )
+
+[node name="StaticObject8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2052, 614 )
+
+[node name="StaticObject9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1983, 472 )
+
+[node name="StaticObject13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2017, 398 )
+
+[node name="StaticObject14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2372, 356 )
+
+[node name="StaticObject18" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2195, 265 )
+
+[node name="StaticObject19" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2429, 292 )
+
+[node name="StaticObject20" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2470, 379 )
+
+[node name="StaticObject21" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2315, 288 )
+
+[node name="StaticObject15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2266, 356 )
+
+[node name="StaticObject16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2179, 353 )
+
+[node name="StaticObject17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2097, 334 )
+
+[node name="StaticObject10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2012, 544 )
+
+[node name="StaticObject11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1940, 598 )
+
+[node name="StaticObject12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1985, 674 )
+
+[node name="StaticObject22" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1966, 791 )
+
+[node name="StaticObject25" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1937, 929 )
+
+[node name="StaticObject28" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2027, 1000 )
+
+[node name="StaticObject29" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1847, 953 )
+
+[node name="StaticObject26" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2028, 891 )
+
+[node name="StaticObject27" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1904, 853 )
+
+[node name="StaticObject23" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2053, 753 )
+
+[node name="StaticObject24" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1928, 712 )
+
+[node name="StaticObject5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1702, 252 )
+
+[node name="StaticObject6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1785, 256 )
+
+[node name="StaticObject7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1731, 180 )
+
+[node name="StaticObject30" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1788, 49 )
+
+[node name="StaticObject33" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1856, 85 )
+
+[node name="StaticObject31" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1710, 72 )
+
+[node name="StaticObject32" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1659, 140 )
+
+[node name="StaticObject3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1755, 328 )
+
+[node name="Boat2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1841, 184 )
+rotation = -0.750133
+script = SubResource( 1 )
