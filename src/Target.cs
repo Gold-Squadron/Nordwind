@@ -55,7 +55,7 @@ public class Target : Node2D {
                     EmitSignal(nameof(all_boats_reached_target));
                 }
 
-                GD.Print(Main.AcitveBoatCounter);
+                // GD.Print(Main.AcitveBoatCounter);
             }
         }
     }

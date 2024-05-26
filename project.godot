@@ -25,6 +25,10 @@ run/main_scene="res://scenes/levels.tscn"
 boot_splash/show_image=false
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://src/Global.cs"
+
 [display]
 
 window/size/fullscreen=true
