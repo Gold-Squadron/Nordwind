@@ -3,9 +3,9 @@ using System;
 
 public class PauseMenu : Control {
 
-    [Export] private Button unpause;
-    [Export] private Button levels;
-    [Export] public Button exit;
+    private Button unpause;
+    private Button levels;
+    private Button exit;
     
     [Export] private PackedScene levelScreen;
 
@@ -23,6 +23,7 @@ public class PauseMenu : Control {
     
     public void handleContinue() {
         GetTree().Paused = false;
+        Visible = false;
     }
     public void handleLevelSelect() {
         GetTree().ChangeSceneTo(levelScreen);

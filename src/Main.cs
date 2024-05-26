@@ -15,6 +15,8 @@ public class Main : Node {
     
     public static int AcitveBoatCounter = 0;
 
+    private Control pauseMenu;
+
     public override void _Ready() {
         GD.Print("Main Level is initializing.");
         
@@ -24,9 +26,17 @@ public class Main : Node {
         for (int i = 0; i < 10; i++) {
             lastDirections.Enqueue(latestWindDir * 40);
         }
+
+        pauseMenu = ResourceLoader.Load<PackedScene>("res://scenes/PauseMenu.tscn").Instance<Control>();
+        AddChild(pauseMenu);
     }
 
     public override void _Process(float delta) {
+        if (Input.IsActionPressed("ui_cancel")) {
+            pauseMenu.Visible = true;
+            GetTree().Paused = true;
+        }
+        
         handlePlayerInput(delta);
     }
     
