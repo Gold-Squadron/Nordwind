@@ -8,16 +8,6 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "EditorVCSInterface",
-"class": "GitAPI",
-"language": "NativeScript",
-"path": "res://addons/godot-git-plugin/git_api.gdns"
-} ]
-_global_script_class_icons={
-"GitAPI": ""
-}
-
 [application]
 
 config/name="Nordwind"
@@ -31,8 +21,12 @@ window/size/fullscreen=true
 
 [editor]
 
-version_control_autoload_on_startup=true
 version_control_plugin_name="GitAPI"
+reimport_missing_imported_files=false
+
+[global]
+
+addon=false
 
 [gui]
 
