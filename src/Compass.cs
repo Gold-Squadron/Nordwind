@@ -9,7 +9,7 @@ public class Compass : Sprite {
         foreground = GetNode("arrow") as Sprite;
         main = GetNode<Main>("/root/Main");
         Position = new Vector2(Texture.GetWidth() * Scale.x / 2f + 15, GetViewportRect().Size.y - Texture.GetHeight() * Scale.y / 2f - 15);
-        GD.Print(Position);
+         // GD.Print(Position);
     }
 
 
