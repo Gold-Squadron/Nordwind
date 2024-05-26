@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Nordwind"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/levels.tscn"
 boot_splash/show_image=false
 config/icon="res://icon.png"
 

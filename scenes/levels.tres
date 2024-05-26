@@ -3,7 +3,7 @@
 [ext_resource path="res://fonts/unitblock/Unitblock.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFontData" id=3]
-font_path = "res://fonts/Chonkly.otf"
+font_path = "res://fonts/Coconut.otf"
 
 [sub_resource type="DynamicFont" id=2]
 size = 100
