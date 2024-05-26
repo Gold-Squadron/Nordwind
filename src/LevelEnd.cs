@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Text;
 
-public class LevelEnd : Control {
+public class LevelEnd : CanvasLayer {
     private Main main;
     private float alpha = 0;
     private float time = 0;
@@ -18,7 +18,7 @@ public class LevelEnd : Control {
         mainMenu.Connect("button_up", this, nameof(handleMainMenu));
         nextLevel.Connect("button_up", this, nameof(handleNextLevel));
 
-        Modulate = new Color(1, 1, 1, alpha);
+        GetNode<CenterContainer>("CenterContainer").Modulate = new Color(1, 1, 1, alpha);
     }
 
     public void handleMainMenu() {
@@ -28,11 +28,11 @@ public class LevelEnd : Control {
     public void handleNextLevel() {
         
 
-        if (ResourceLoader.Exists("res://scenes/levels/Level_" + (Global.CurrentLevel+1) + ".tscn")) {
+        if (ResourceLoader.Exists("res://scenes/levels/level_" + (Global.CurrentLevel+1) + ".tscn")) {
             Global.CurrentLevel += 1;
             GD.Print(Global.CurrentLevel);
-            GD.Print("res://scenes/levels/Level_" + (Global.CurrentLevel+1) + ".tscn");
-            GetTree().ChangeSceneTo(ResourceLoader.Load<PackedScene>("res://scenes/levels/Level_" + Global.CurrentLevel + ".tscn"));
+            GD.Print("res://scenes/levels/level_" + (Global.CurrentLevel+1) + ".tscn");
+            GetTree().ChangeSceneTo(ResourceLoader.Load<PackedScene>("res://scenes/levels/level_" + Global.CurrentLevel + ".tscn"));
         }
     }
 
@@ -41,7 +41,7 @@ public class LevelEnd : Control {
             time += delta;
             if (time > 1 && alpha < 1) {
                 alpha += 1F / 100F;
-                Modulate = new Color(1, 1, 1, alpha);
+                GetNode<CenterContainer>("CenterContainer").Modulate = new Color(1, 1, 1, alpha);
             }
         }
     }

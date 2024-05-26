@@ -17,6 +17,8 @@ public class Main : Node {
 
     private Control pauseMenu;
 
+    // private int targetCount = 0; 
+
     public override void _Ready() {
         GD.Print("Main Level is initializing.");
 
@@ -85,8 +87,12 @@ public class Main : Node {
 
     private void _on_Target_all_boats_reached_target() {
         GD.Print("YOU DID IT!");
-        GetNode<Control>("HUD/LevelEnd").Visible = true;
+        // GD.Print("TARGETCOUNT " + targetCount);
+        // if (--targetCount == 0) {
+        GetNode<CanvasLayer>("HUD/LevelEnd").Visible = true;
         GetNode<Button>("HUD/LevelEnd/CenterContainer/VBoxContainer/NextLevel").Visible = Global.CurrentLevel < Global.LevelCount;
+        GD.Print(Main.AcitveBoatCounter);
+        // }
     }
 
 }

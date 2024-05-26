@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Main.cs" type="Script" id=1]
 [ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/components/TheLimit.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/components/CloudCorner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/components/CloudEdge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/components/CloudEdge5.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
@@ -26,6 +28,7 @@ position = Vector2( 1288, 219 )
 radius = 140.0
 
 [node name="HUD" parent="." instance=ExtResource( 12 )]
+visible = false
 
 [node name="Target" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1284, 700 )
@@ -134,8 +137,81 @@ position = Vector2( 604, 608 )
 [node name="StaticObject32" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 535, 545 )
 
-[node name="TheLimit" parent="." instance=ExtResource( 4 )]
-visible = false
-
 [node name="Boat2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 209, 302 )
+MAX_SPEED = 65.0
+
+[node name="CloudBorder" type="Node2D" parent="."]
+
+[node name="CloudEdge13" parent="CloudBorder" instance=ExtResource( 6 )]
+position = Vector2( 1852, 330 )
+rotation = 1.5708
+
+[node name="CloudCorner3" parent="CloudBorder" instance=ExtResource( 4 )]
+position = Vector2( 1853, 947 )
+rotation = 3.14159
+
+[node name="CloudEdge12" parent="CloudBorder" instance=ExtResource( 5 )]
+position = Vector2( 1756, 946 )
+rotation = 3.14159
+
+[node name="CloudEdge11" parent="CloudBorder" instance=ExtResource( 5 )]
+position = Vector2( 1626, 946 )
+rotation = 3.14159
+
+[node name="CloudEdge10" parent="CloudBorder" instance=ExtResource( 5 )]
+position = Vector2( 1496, 946 )
+rotation = 3.14159
+
+[node name="CloudEdge8" parent="CloudBorder" instance=ExtResource( 6 )]
+position = Vector2( 716, 946 )
+rotation = 3.14159
+
+[node name="CloudCorner2" parent="CloudBorder" instance=ExtResource( 4 )]
+position = Vector2( 99, 947 )
+rotation = -1.5708
+
+[node name="CloudEdge4" parent="CloudBorder" instance=ExtResource( 5 )]
+position = Vector2( 100, 850 )
+rotation = -1.5708
+
+[node name="CloudEdge7" parent="CloudBorder" instance=ExtResource( 6 )]
+position = Vector2( 100, 590 )
+rotation = -1.5708
+
+[node name="CloudCorner" parent="CloudBorder" instance=ExtResource( 4 )]
+position = Vector2( 99, -27 )
+
+[node name="CloudEdge5" parent="CloudBorder" instance=ExtResource( 6 )]
+position = Vector2( 196, -26 )
+
+[node name="CloudEdge6" parent="CloudBorder" instance=ExtResource( 6 )]
+position = Vector2( 846, -26 )
+
+[node name="CloudEdge" parent="CloudBorder" instance=ExtResource( 5 )]
+position = Vector2( 1496, -26 )
+
+[node name="CloudEdge2" parent="CloudBorder" instance=ExtResource( 5 )]
+position = Vector2( 1626, -26 )
+
+[node name="CloudEdge3" parent="CloudBorder" instance=ExtResource( 5 )]
+position = Vector2( 100, 720 )
+rotation = -1.5708
+
+[node name="CloudEdge9" parent="CloudBorder" instance=ExtResource( 6 )]
+position = Vector2( 1366, 946 )
+rotation = 3.14159
+
+[node name="CloudEdge" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1852, 200 )
+rotation = 1.5708
+
+[node name="CloudEdge" parent="CloudEdge" instance=ExtResource( 5 )]
+position = Vector2( -130, 0 )
+
+[node name="CloudCorner" parent="CloudEdge/CloudEdge" instance=ExtResource( 4 )]
+position = Vector2( -97, -1 )
+
+[node name="CloudEdge" parent="CloudEdge/CloudEdge/CloudCorner" instance=ExtResource( 5 )]
+position = Vector2( 1, 97 )
+rotation = -1.5708

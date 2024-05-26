@@ -10,9 +10,9 @@ public class PauseMenu : Control {
     [Export] private PackedScene levelScreen;
 
     public override void _Ready() {
-        unpause = GetNode<Button>("VBoxContainer/continue");
-        levels = GetNode<Button>("VBoxContainer/levels");
-        exit = GetNode<Button>("VBoxContainer/exit");
+        unpause = GetNode<Button>("CenterContainer/VBoxContainer/continue");
+        levels = GetNode<Button>("CenterContainer/VBoxContainer/levels");
+        exit = GetNode<Button>("CenterContainer/VBoxContainer/exit");
         
         levels.GrabFocus();
         
@@ -26,7 +26,8 @@ public class PauseMenu : Control {
         Visible = false;
     }
     public void handleLevelSelect() {
-        GetTree().ChangeSceneTo(levelScreen);
+        GetTree().ChangeSceneTo(ResourceLoader.Load<PackedScene>("res://scenes/levels.tscn"));
+        GetTree().Paused = false;
     }
     public void handleExit() {
         GetTree().Quit();
