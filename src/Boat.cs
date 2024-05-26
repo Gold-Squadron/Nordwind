@@ -65,6 +65,11 @@ public class Boat : KinematicBody2D {
             return;
         }
         
+        if (collisionResult != null) {
+            Main.AcitveBoatCounter = 0;
+            GetTree().ReloadCurrentScene();
+        }
+        
     }
 
     public void Deactivate() {
