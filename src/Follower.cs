@@ -28,7 +28,7 @@ public class Follower : Node2D {
             boats.Remove(boat);
         }
         
-        return sum / boats.Count;
+        return boats.Count != 0 ? sum / boats.Count: Position;
     }
 
     
