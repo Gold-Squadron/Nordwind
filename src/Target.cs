@@ -64,6 +64,8 @@ public class Target : Node2D {
 
     private void _on_Area2D_body_entered(Node body) {
         GD.Print("BODY ENTERED!");
+        GD.Print(Main.AcitveBoatCounter);
+
         if (body.GetType() == typeof(Boat)) {
             Boat boat = (Boat)body;
             if (boat.type == type) {
