@@ -16,6 +16,7 @@ windDir = Vector2( 1, 0 )
 [node name="Boat" parent="." instance=ExtResource( 3 )]
 position = Vector2( -15, 648 )
 velocity = Vector2( 1, 0 )
+type = 1
 
 [node name="StaticObject" parent="." instance=ExtResource( 4 )]
 position = Vector2( 577, 547 )
@@ -30,7 +31,7 @@ texture = ExtResource( 9 )
 position = Vector2( 388, 1096 )
 
 [node name="Target" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1172, 610 )
+position = Vector2( 1218, 571 )
 radius = 200.0
 type = 1
 

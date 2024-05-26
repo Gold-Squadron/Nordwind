@@ -39,7 +39,7 @@ public class Target : Node2D {
 
         Shape2D aShape = GetNode<CollisionShape2D>("Area2D/CollisionShape2D").Shape;
         CircleShape2D aCircleShape2D = (CircleShape2D)aShape;
-        aCircleShape2D.Radius = radius * 30;
+        aCircleShape2D.Radius = radius * 100;
 
         GetNode("Area2D").Connect("body_entered", this, nameof(_on_Area2D_body_entered));
     }

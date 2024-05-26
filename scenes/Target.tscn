@@ -4,7 +4,6 @@
 [ext_resource path="res://src/Target.cs" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 20000.0
 
 [node name="Target" type="Node2D"]
 z_index = 5
