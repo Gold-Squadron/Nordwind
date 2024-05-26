@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Main.cs" type="Script" id=1]
 [ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=2]
@@ -12,8 +12,9 @@
 [ext_resource path="res://scenes/components/CloudEdge3.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/components/Water.tscn" type="PackedScene" id=13]
 
-[node name="Main2" type="Node2D"]
+[node name="Main" type="Node2D"]
 script = ExtResource( 1 )
 windDir = Vector2( 1, 0 )
 windSpeed = 100.0
@@ -42,9 +43,11 @@ position = Vector2( 465, 817 )
 
 [node name="StaticObject3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 617, 655 )
+z_index = 0
 
 [node name="StaticObject" parent="." instance=ExtResource( 2 )]
 position = Vector2( 617, 229 )
+z_index = 0
 
 [node name="StaticObject2" parent="." instance=ExtResource( 5 )]
 position = Vector2( -518, 492 )
@@ -117,3 +120,7 @@ rotation = 1.5708
 [node name="CloudCorner4" parent="CloudBorder" instance=ExtResource( 8 )]
 position = Vector2( 1322, 1106 )
 rotation = -3.14159
+
+[node name="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 255.5, 488.5 )
+scale = Vector2( 2.71875, 2.11167 )

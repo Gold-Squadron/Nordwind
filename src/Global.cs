@@ -7,7 +7,7 @@ public class Global : Node
     // private int a = 2;
     // private string b = "text";
 
-    public static int LevelCount = 6;
+    public static int LevelCount = 11;
     public static int CurrentLevel = 1;
 
     // Called when the node enters the scene tree for the first time.

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/LevelMenu.cs" type="Script" id=1]
 [ext_resource path="res://scenes/levels.tres" type="Theme" id=2]
 [ext_resource path="res://fonts/unitblock/Unitblock.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://scenes/levels/LevelButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/components/Water.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -29,3 +30,7 @@ margin_left = 82.0
 margin_top = 145.0
 margin_right = 2660.0
 margin_bottom = 1521.0
+
+[node name="Sprite" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2943.5, 1938.5 )
+scale = Vector2( 7.72625, 6.83167 )
