@@ -12,10 +12,14 @@ public class Main : Node {
     
     [Export]
     public float windSpeed = 80;
+    
+    public static int AcitveBoatCounter = 0;
 
     public override void _Ready() {
         GD.Print("Main Level is initializing.");
-
+        
+        GetNode("Target").Connect("all_boats_reached_target", this, nameof(_on_Target_all_boats_reached_target));
+        
         lastDirections = new Queue<Vector2>(10);
         for (int i = 0; i < 10; i++) {
             lastDirections.Enqueue(latestWindDir * 40);
@@ -52,7 +56,7 @@ public class Main : Node {
             windDir = lastDirections.Dequeue();
             lastDirections.Enqueue(new Vector2(latestWindDir));
             lastCalc = Time.GetTicksMsec();
-            GD.Print(lastCalc);
+            // GD.Print(lastCalc);
         }
     }
 
@@ -63,4 +67,9 @@ public class Main : Node {
     public static float getAngleInRadians(Vector2 vec) {
         return new Vector2(-vec.x, vec.y).AngleTo(Vector2.Up);
     }
+
+    private void _on_Target_all_boats_reached_target() {
+        GD.Print("YOU DID IT!");
+    }
+
 }
