@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/LevelMenu.cs" type="Script" id=1]
+[ext_resource path="res://scenes/levels.tres" type="Theme" id=2]
+[ext_resource path="res://fonts/unitblock/Unitblock.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/levels/LevelButton.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+btnPrefab = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 53.0
+margin_top = 13.0
+margin_right = 685.0
+margin_bottom = 133.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "Levels"
+
+[node name="lvls" type="HFlowContainer" parent="."]
+margin_left = 82.0
+margin_top = 145.0
+margin_right = 2660.0
+margin_bottom = 1521.0
