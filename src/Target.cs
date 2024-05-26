@@ -5,6 +5,7 @@ using System.Security.Policy;
 public class Target : Node2D {
     [Export] private float radius = 100;
     [Export] private Color color = Colors.Blue;
+    [Export] public int type;
 
     [Signal]
     delegate void all_boats_reached_target();
@@ -30,6 +31,7 @@ public class Target : Node2D {
         GD.Print("BODY ENTERED!");
         if (body.GetType() == typeof(Boat)) {
             Boat boat = (Boat)body;
+            boat.Deactivate();
             boat.SetPhysicsProcess(false);
             if (--Main.AcitveBoatCounter == 0) {
                 EmitSignal(nameof(all_boats_reached_target));
