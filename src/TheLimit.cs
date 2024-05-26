@@ -22,12 +22,10 @@ public class TheLimit : Node2D {
     }
     
     public void _on_Area2D_area_exited(CollisionObject a) {
-        GD.Print("X:" + a.Name);
         if (a.GetType() != typeof(Boat)) {
             return;
         }
 
-        GD.Print("B:" + a.Name);
         Main.AcitveBoatCounter = 0;
         GetTree().ReloadCurrentScene();
     }

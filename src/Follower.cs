@@ -7,8 +7,8 @@ public class Follower : Node2D {
     
     public override void _Ready() {
         foreach (var sibling in GetParent().GetChildren()) {
-            if (sibling.GetType() == typeof(Boat)) {
-                boats.Add((Boat)sibling);
+            if (sibling is Boat boat && boat.type != -1) {
+                boats.Add(boat);
             }
         }
     }
