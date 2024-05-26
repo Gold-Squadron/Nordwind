@@ -5,7 +5,7 @@ using Godot;
 public class Main : Node {
 
     [Export] public Vector2 windDir = Vector2.Down;
-    private Vector2 latestWindDir = Vector2.Down;
+    private Vector2 latestWindDir;
     
     private Queue<Vector2> lastDirections;
     private ulong lastCalc = 0;
@@ -17,7 +17,8 @@ public class Main : Node {
 
     public override void _Ready() {
         GD.Print("Main Level is initializing.");
-        
+
+        latestWindDir = windDir;
         GetNode("Target").Connect("all_boats_reached_target", this, nameof(_on_Target_all_boats_reached_target));
         
         lastDirections = new Queue<Vector2>(10);

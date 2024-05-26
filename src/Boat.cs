@@ -6,16 +6,16 @@ public class Boat : KinematicBody2D {
 
     private const float MAX_SPEED = 40;
     private Main main;
-    public Vector2 velocity;
+    [Export] private Vector2 velocity = Vector2.Down;
 
-    [Export] private int type = 0;
+    [Export] public int type = 0;
     
     public bool active = true;
     private float alpha = 1;
     
     public override void _Ready() {
         main = GetNode<Main>("/root/Main");
-        velocity = Vector2.Down * (float)(MAX_SPEED * 0.8f);
+        velocity = velocity * (float)(MAX_SPEED * 0.8f);
         Main.AcitveBoatCounter++;
         
     }

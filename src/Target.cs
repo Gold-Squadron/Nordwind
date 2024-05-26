@@ -4,8 +4,8 @@ using System.Security.Policy;
 
 public class Target : Node2D {
     [Export] private float radius = 100;
-    [Export] private Color color = Colors.Blue;
-    [Export] public int type;
+    private Color color;
+    [Export] public int type = 0;
 
     [Signal]
     delegate void all_boats_reached_target();
@@ -18,6 +18,23 @@ public class Target : Node2D {
     }
 
     public override void _Ready() {
+
+        switch (type) {
+            case 0:
+                color = Colors.Red;
+                break;
+            case 1:
+                color = Colors.Blue;
+                break;
+            case 2:
+                color = Colors.Green;
+                break;
+            default:
+                color = Colors.Red;
+                type = 0;
+                break;
+        }
+        
         GetNode<CollisionShape2D>("Area2D/CollisionShape2D").Shape.Set("Radius", radius);
 
         Shape2D aShape = GetNode<CollisionShape2D>("Area2D/CollisionShape2D").Shape;
@@ -31,13 +48,15 @@ public class Target : Node2D {
         GD.Print("BODY ENTERED!");
         if (body.GetType() == typeof(Boat)) {
             Boat boat = (Boat)body;
-            boat.Deactivate();
-            boat.SetPhysicsProcess(false);
-            if (--Main.AcitveBoatCounter == 0) {
-                EmitSignal(nameof(all_boats_reached_target));
-            }
+            if (boat.type == type) {
+                boat.Deactivate();
+                boat.SetPhysicsProcess(false);
+                if (--Main.AcitveBoatCounter == 0) {
+                    EmitSignal(nameof(all_boats_reached_target));
+                }
 
-            GD.Print(Main.AcitveBoatCounter);
+                GD.Print(Main.AcitveBoatCounter);
+            }
         }
     }
 }
