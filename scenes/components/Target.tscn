@@ -24,3 +24,5 @@ shape = SubResource( 1 )
 [node name="BuoyTint" type="Sprite" parent="."]
 scale = Vector2( 0.01, 0.01 )
 texture = ExtResource( 3 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
