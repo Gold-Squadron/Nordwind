@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Follower.cs" type="Script" id=1]
+
+[node name="Follower" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 1.05, 1.05 )
+smoothing_enabled = true
+smoothing_speed = 0.5

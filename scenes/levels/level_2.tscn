@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/Main.cs" type="Script" id=1]
+[ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/components/StaticObject.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+windDir = Vector2( 1, 0 )
+
+[node name="Boat" parent="." instance=ExtResource( 3 )]
+position = Vector2( 311, 487 )
+
+[node name="Boat2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1187, 471 )
+
+[node name="StaticObject" parent="." instance=ExtResource( 4 )]
+position = Vector2( 787, 437 )
+
+[node name="Follower" parent="." instance=ExtResource( 11 )]
+position = Vector2( 928, 435 )
+
+[node name="Target2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1621, 445 )
+radius = 200.0
+
+[node name="HUD" parent="." instance=ExtResource( 12 )]

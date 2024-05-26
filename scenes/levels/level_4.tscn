@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/Main.cs" type="Script" id=1]
+[ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/components/MovingObject.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/components/StaticObject.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+windDir = Vector2( 1, 0 )
+windSpeed = 100.0
+
+[node name="Boat2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -226, 469 )
+MAX_SPEED = 65.0
+
+[node name="Follower" parent="." instance=ExtResource( 11 )]
+position = Vector2( 308, 471 )
+
+[node name="HUD" parent="." instance=ExtResource( 12 )]
+
+[node name="Target" parent="." instance=ExtResource( 7 )]
+position = Vector2( 983, 457 )
+radius = 140.0
+
+[node name="MovingObject" parent="." instance=ExtResource( 4 )]
+position = Vector2( 268, 465 )
+
+[node name="MovingObject2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 473, 80 )
+
+[node name="MovingObject3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 465, 817 )
+
+[node name="StaticObject2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -518, 492 )
+
+[node name="StaticObject" parent="." instance=ExtResource( 2 )]
+position = Vector2( 617, 229 )
+
+[node name="StaticObject3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 617, 655 )

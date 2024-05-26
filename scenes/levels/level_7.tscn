@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/Main.cs" type="Script" id=1]
+[ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/components/Spawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+windDir = Vector2( 1, 0 )
+windSpeed = 120.0
+
+[node name="Spawner2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1543, 37 )
+delayInMs = 10000
+distance = 2000
+velocity = Vector2( 0, 55 )
+
+[node name="Follower" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1041, 515 )
+
+[node name="HUD" parent="." instance=ExtResource( 12 )]
+
+[node name="Target" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2133, 538 )
+radius = 140.0
+
+[node name="StaticObject4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 633, 773 )
+
+[node name="StaticObject" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1145, 375 )
+
+[node name="StaticObject2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1745, 748 )
+
+[node name="StaticObject3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2145, 265 )
+
+[node name="Boat" parent="." instance=ExtResource( 3 )]
+position = Vector2( 571, 519 )
+MAX_SPEED = 50.0
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Spawner" parent="." instance=ExtResource( 4 )]
+position = Vector2( 984, 31 )
+delayInMs = 10000
+distance = 2000
+velocity = Vector2( 0, 45 )

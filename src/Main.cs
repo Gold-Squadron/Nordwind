@@ -5,7 +5,7 @@ using Godot;
 public class Main : Node {
 
     [Export] public Vector2 windDir = Vector2.Down;
-    private Vector2 latestWindDir = Vector2.Down;
+    private Vector2 latestWindDir;
     
     private Queue<Vector2> lastDirections;
     private ulong lastCalc = 0;
@@ -15,18 +15,33 @@ public class Main : Node {
     
     public static int AcitveBoatCounter = 0;
 
+    private Control pauseMenu;
+
     public override void _Ready() {
         GD.Print("Main Level is initializing.");
-        
-        GetNode("Target").Connect("all_boats_reached_target", this, nameof(_on_Target_all_boats_reached_target));
+
+        latestWindDir = windDir;
+        foreach (Node child in GetChildren()) {
+            if (child is Target) {
+                child.Connect("all_boats_reached_target", this, nameof(_on_Target_all_boats_reached_target));
+            }
+        }
         
         lastDirections = new Queue<Vector2>(10);
         for (int i = 0; i < 10; i++) {
             lastDirections.Enqueue(latestWindDir * 40);
         }
+
+        pauseMenu = ResourceLoader.Load<PackedScene>("res://scenes/PauseMenu.tscn").Instance<Control>();
+        AddChild(pauseMenu);
     }
 
     public override void _Process(float delta) {
+        if (Input.IsActionPressed("ui_cancel")) {
+            pauseMenu.Visible = true;
+            GetTree().Paused = true;
+        }
+        
         handlePlayerInput(delta);
     }
     
@@ -70,6 +85,8 @@ public class Main : Node {
 
     private void _on_Target_all_boats_reached_target() {
         GD.Print("YOU DID IT!");
+        GetNode<Control>("HUD/LevelEnd").Visible = true;
+        GetNode<Button>("HUD/LevelEnd/CenterContainer/VBoxContainer/NextLevel").Visible = Global.CurrentLevel < Global.LevelCount;
     }
 
 }

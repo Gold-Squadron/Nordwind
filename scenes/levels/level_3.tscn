@@ -1,0 +1,138 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/Main.cs" type="Script" id=1]
+[ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+windDir = Vector2( 1, 0 )
+windSpeed = 230.0
+
+[node name="Boat" parent="." instance=ExtResource( 3 )]
+position = Vector2( 201, 747 )
+MAX_SPEED = 65.0
+type = 1
+
+[node name="Follower" parent="." instance=ExtResource( 11 )]
+position = Vector2( 695, 429 )
+
+[node name="Target2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1288, 219 )
+radius = 140.0
+
+[node name="HUD" parent="." instance=ExtResource( 12 )]
+
+[node name="Target" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1284, 700 )
+radius = 140.0
+type = 1
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="StaticObject33" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1046, 389 )
+
+[node name="StaticObject34" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1002, 301 )
+
+[node name="StaticObject36" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 954, 218 )
+rotation = 0.150201
+
+[node name="StaticObject35" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 941, 380 )
+
+[node name="StaticObject2" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 173, 477 )
+
+[node name="StaticObject3" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 328, 475 )
+
+[node name="StaticObject4" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 414, 475 )
+
+[node name="StaticObject5" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 569, 473 )
+
+[node name="StaticObject6" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 725, 475 )
+
+[node name="StaticObject7" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 801, 467 )
+
+[node name="StaticObject8" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 955, 463 )
+
+[node name="StaticObject9" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1110, 461 )
+
+[node name="StaticObject10" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1180, 461 )
+
+[node name="StaticObject11" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1335, 459 )
+
+[node name="StaticObject12" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1504, 392 )
+
+[node name="StaticObject25" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1525, 538 )
+
+[node name="StaticObject26" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1618, 625 )
+
+[node name="StaticObject27" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1672, 699 )
+
+[node name="StaticObject28" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1687, 805 )
+
+[node name="StaticObject13" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1623, 208 )
+
+[node name="StaticObject" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 251, 475 )
+
+[node name="StaticObject15" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 492, 473 )
+
+[node name="StaticObject16" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 647, 471 )
+
+[node name="StaticObject18" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 883, 467 )
+
+[node name="StaticObject19" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1033, 461 )
+
+[node name="StaticObject21" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1258, 459 )
+
+[node name="StaticObject22" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1413, 457 )
+
+[node name="StaticObject23" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1571, 303 )
+
+[node name="StaticObject24" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 1631, 98 )
+
+[node name="StaticObject29" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 557, 722 )
+
+[node name="StaticObject30" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 519, 634 )
+
+[node name="StaticObject31" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 604, 608 )
+
+[node name="StaticObject32" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 535, 545 )
+
+[node name="Boat2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 209, 302 )
+MAX_SPEED = 65.0
