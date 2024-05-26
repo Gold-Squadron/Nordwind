@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/Main.cs" type="Script" id=1]
 [ext_resource path="res://scenes/components/CloudEdge5.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/components/Water.tscn" type="PackedScene" id=8]
 [ext_resource path="res://textures/wasser.png" type="Texture" id=9]
+[ext_resource path="res://scenes/components/Tutorial.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
 
@@ -119,3 +120,5 @@ rotation = 3.14159
 [node name="Sprite" parent="." instance=ExtResource( 8 )]
 position = Vector2( 588, 575.5 )
 scale = Vector2( 2.2175, 1.66167 )
+
+[node name="Tutorial" parent="." instance=ExtResource( 10 )]

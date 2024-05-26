@@ -21,7 +21,7 @@ public class Main : Node {
 
     public override void _Ready() {
         GD.Print("Main Level is initializing.");
-
+        
         latestWindDir = windDir;
         foreach (Node child in GetChildren()) {
             if (child is Target) {

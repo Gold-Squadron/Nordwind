@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://textures/poseidon.png" type="Texture" id=1]
+[ext_resource path="res://src/Tutorial.cs" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.917647, 0.65098, 0.235294, 1 )
+
+[node name="Tutorial" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -120.0
+margin_right = 512.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+margin_left = 293.0
+margin_right = 730.0
+margin_bottom = 130.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 432.0
+margin_bottom = 125.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/PanelContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 100, 120 )
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/HBoxContainer"]
+margin_left = 104.0
+margin_top = 2.0
+margin_right = 427.0
+margin_bottom = 118.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Welcome, mortal! I am Poseidon, ruler of the seas
+and master of the winds. You stand before a
+great challenge that even the bravest sailors find
+daunting: the art of steering ships safely through
+the whims of the ocean.
+
+"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
