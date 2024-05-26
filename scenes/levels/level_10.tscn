@@ -1,0 +1,182 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/components/Spawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Main.cs" type="Script" id=6]
+[ext_resource path="res://scenes/components/MovingObject.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=8]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 6 )
+windDir = Vector2( 1, 0 )
+windSpeed = 120.0
+
+[node name="Follower" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1050, 524 )
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="Spawner2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2097, 87 )
+scale = Vector2( 0.02, 0.02 )
+velocity = Vector2( 0, -90 )
+
+[node name="Spawner" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1706, 1101 )
+scale = Vector2( 0.02, 0.02 )
+
+[node name="Target2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2633, 363 )
+
+[node name="Target3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3101, 774 )
+type = 1
+
+[node name="Boat" parent="." instance=ExtResource( 5 )]
+position = Vector2( 829, 315 )
+MAX_SPEED = 60.0
+
+[node name="Boat2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 807, 745 )
+MAX_SPEED = 60.0
+type = 1
+
+[node name="Node" type="Node" parent="."]
+
+[node name="StaticObject" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1630, 511 )
+
+[node name="StaticObject2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1847, 509 )
+
+[node name="StaticObject5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2194, 513 )
+
+[node name="StaticObject6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2123, 515 )
+
+[node name="StaticObject19" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2188, 383 )
+
+[node name="StaticObject29" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2185, 313 )
+
+[node name="StaticObject20" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2189, 449 )
+
+[node name="StaticObject7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2053, 517 )
+
+[node name="StaticObject8" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1987, 511 )
+
+[node name="StaticObject9" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1923, 513 )
+
+[node name="StaticObject17" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1925, 649 )
+
+[node name="StaticObject28" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1920, 716 )
+
+[node name="StaticObject18" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1923, 577 )
+
+[node name="StaticObject3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1766, 513 )
+
+[node name="StaticObject10" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2338, 509 )
+
+[node name="StaticObject11" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2685, 513 )
+
+[node name="StaticObject12" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2614, 515 )
+
+[node name="StaticObject13" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2544, 517 )
+
+[node name="StaticObject14" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2478, 511 )
+
+[node name="StaticObject15" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2414, 513 )
+
+[node name="StaticObject16" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2257, 513 )
+
+[node name="StaticObject21" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2833, 513 )
+
+[node name="StaticObject30" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2590, 867 )
+
+[node name="StaticObject40" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2467, 821 )
+
+[node name="StaticObject33" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2692, 921 )
+
+[node name="StaticObject34" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2697, 671 )
+
+[node name="StaticObject41" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2788, 581 )
+
+[node name="StaticObject42" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2767, 656 )
+
+[node name="StaticObject35" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2857, 732 )
+
+[node name="StaticObject39" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2895, 827 )
+
+[node name="StaticObject36" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2911, 682 )
+
+[node name="StaticObject38" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2468, 929 )
+
+[node name="StaticObject37" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2810, 786 )
+
+[node name="StaticObject32" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2665, 604 )
+
+[node name="StaticObject31" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2474, 589 )
+
+[node name="StaticObject43" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2471, 738 )
+
+[node name="StaticObject44" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2529, 783 )
+
+[node name="StaticObject22" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3180, 517 )
+
+[node name="StaticObject23" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3109, 519 )
+
+[node name="StaticObject24" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3039, 521 )
+
+[node name="StaticObject25" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2973, 515 )
+
+[node name="StaticObject26" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2909, 517 )
+
+[node name="StaticObject27" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2752, 517 )
+
+[node name="StaticObject4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1700, 511 )
+
+[node name="MovingObject" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1135, 412 )
