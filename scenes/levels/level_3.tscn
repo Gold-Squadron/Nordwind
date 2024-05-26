@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Main.cs" type="Script" id=1]
 [ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/components/CloudEdge.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/components/CloudEdge5.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/components/Water.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
 
@@ -39,103 +40,136 @@ type = 1
 
 [node name="StaticObject33" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1046, 389 )
+z_index = 0
 
 [node name="StaticObject34" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1002, 301 )
+z_index = 0
 
 [node name="StaticObject36" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 954, 218 )
 rotation = 0.150201
+z_index = 0
 
 [node name="StaticObject35" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 941, 380 )
+z_index = 0
 
 [node name="StaticObject2" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 173, 477 )
+z_index = 0
 
 [node name="StaticObject3" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 328, 475 )
+z_index = 0
 
 [node name="StaticObject4" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 414, 475 )
+z_index = 0
 
 [node name="StaticObject5" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 569, 473 )
+z_index = 0
 
 [node name="StaticObject6" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 725, 475 )
+z_index = 0
 
 [node name="StaticObject7" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 801, 467 )
+z_index = 0
 
 [node name="StaticObject8" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 955, 463 )
+z_index = 0
 
 [node name="StaticObject9" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1110, 461 )
+z_index = 0
 
 [node name="StaticObject10" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1180, 461 )
+z_index = 0
 
 [node name="StaticObject11" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1335, 459 )
+z_index = 0
 
 [node name="StaticObject12" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1504, 392 )
+z_index = 0
 
 [node name="StaticObject25" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1525, 538 )
+z_index = 0
 
 [node name="StaticObject26" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1618, 625 )
+z_index = 0
 
 [node name="StaticObject27" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1672, 699 )
+z_index = 0
 
 [node name="StaticObject28" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1687, 805 )
+z_index = 0
 
 [node name="StaticObject13" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1623, 208 )
+z_index = 0
 
 [node name="StaticObject" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 251, 475 )
+z_index = 0
 
 [node name="StaticObject15" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 492, 473 )
+z_index = 0
 
 [node name="StaticObject16" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 647, 471 )
+z_index = 0
 
 [node name="StaticObject18" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 883, 467 )
+z_index = 0
 
 [node name="StaticObject19" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1033, 461 )
+z_index = 0
 
 [node name="StaticObject21" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1258, 459 )
+z_index = 0
 
 [node name="StaticObject22" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1413, 457 )
+z_index = 0
 
 [node name="StaticObject23" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1571, 303 )
+z_index = 0
 
 [node name="StaticObject24" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 1631, 98 )
+z_index = 0
 
 [node name="StaticObject29" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 557, 722 )
+z_index = 0
 
 [node name="StaticObject30" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 519, 634 )
+z_index = 0
 
 [node name="StaticObject31" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 604, 608 )
+z_index = 0
 
 [node name="StaticObject32" parent="Objects" instance=ExtResource( 2 )]
 position = Vector2( 535, 545 )
+z_index = 0
 
 [node name="Boat2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 209, 302 )
@@ -198,20 +232,25 @@ position = Vector2( 1626, -26 )
 position = Vector2( 100, 720 )
 rotation = -1.5708
 
+[node name="CloudEdge16" parent="CloudBorder" instance=ExtResource( 5 )]
+position = Vector2( 1756, -26.0004 )
+
+[node name="CloudCorner4" parent="CloudBorder" instance=ExtResource( 4 )]
+position = Vector2( 1853, -27 )
+rotation = 1.5708
+
+[node name="CloudEdge15" parent="CloudBorder" instance=ExtResource( 5 )]
+position = Vector2( 1852, 70 )
+rotation = 1.5708
+
+[node name="CloudEdge14" parent="CloudBorder" instance=ExtResource( 5 )]
+position = Vector2( 1852, 200 )
+rotation = 1.5708
+
 [node name="CloudEdge9" parent="CloudBorder" instance=ExtResource( 6 )]
 position = Vector2( 1366, 946 )
 rotation = 3.14159
 
-[node name="CloudEdge" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1852, 200 )
-rotation = 1.5708
-
-[node name="CloudEdge" parent="CloudEdge" instance=ExtResource( 5 )]
-position = Vector2( -130, 0 )
-
-[node name="CloudCorner" parent="CloudEdge/CloudEdge" instance=ExtResource( 4 )]
-position = Vector2( -97, -1 )
-
-[node name="CloudEdge" parent="CloudEdge/CloudEdge/CloudCorner" instance=ExtResource( 5 )]
-position = Vector2( 1, 97 )
-rotation = -1.5708
+[node name="Sprite" parent="." instance=ExtResource( 8 )]
+position = Vector2( 973.5, 458.5 )
+scale = Vector2( 2.23375, 1.68167 )

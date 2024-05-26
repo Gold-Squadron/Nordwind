@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/Main.cs" type="Script" id=1]
 [ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/components/CloudEdge.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/components/CloudEdge3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/components/Water.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
 
@@ -31,24 +32,31 @@ position = Vector2( 959, 440 )
 
 [node name="StaticObject" parent="StaticObject2" instance=ExtResource( 2 )]
 position = Vector2( -216, 618 )
+z_index = 0
 
 [node name="StaticObject3" parent="StaticObject2" instance=ExtResource( 2 )]
 position = Vector2( 143, 411 )
+z_index = 0
 
 [node name="StaticObject5" parent="StaticObject2" instance=ExtResource( 2 )]
 position = Vector2( 589, 637 )
+z_index = 0
 
 [node name="StaticObject6" parent="StaticObject2" instance=ExtResource( 2 )]
 position = Vector2( 834, 244 )
+z_index = 0
 
 [node name="StaticObject8" parent="StaticObject2" instance=ExtResource( 2 )]
 position = Vector2( -722, 179 )
+z_index = 0
 
 [node name="StaticObject9" parent="StaticObject2" instance=ExtResource( 2 )]
 position = Vector2( -1163, 388 )
+z_index = 0
 
 [node name="StaticObject10" parent="StaticObject2" instance=ExtResource( 2 )]
 position = Vector2( -941, 576 )
+z_index = 0
 
 [node name="Boat" parent="." instance=ExtResource( 3 )]
 position = Vector2( 219, 863 )
@@ -128,3 +136,7 @@ rotation = 1.5708
 [node name="CloudCorner4" parent="CloudBorder" instance=ExtResource( 6 )]
 position = Vector2( 1322, 1106 )
 rotation = -3.14159
+
+[node name="Sprite" parent="." instance=ExtResource( 10 )]
+position = Vector2( 778, 836 )
+scale = Vector2( 2.7175, 2.11333 )

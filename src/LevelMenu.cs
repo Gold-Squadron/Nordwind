@@ -7,11 +7,11 @@ public class LevelMenu : Control {
 	[Export] 
 	public PackedScene btnPrefab;
 
-	[Export] public int levels = 6;
+	// [Export] public int levels = 6;
 	
 	public override void _Ready() {
 		HFlowContainer lvlContainer = GetNode<HFlowContainer>("lvls");
-		for (int i = 1; i <= levels; i++) {
+		for (int i = 1; i <= Global.LevelCount; i++) {
 			LevelLoadButton btn = btnPrefab.Instance() as LevelLoadButton;
 			Debug.Assert(btn != null, nameof(btn) + " != null");
 			btn.setLevel(i);

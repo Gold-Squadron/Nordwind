@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Main.cs" type="Script" id=1]
 [ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://scenes/components/CloudEdge3.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/components/Water.tscn" type="PackedScene" id=13]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -143,27 +144,35 @@ rotation = 3.14159
 
 [node name="StaticObject11" parent="StaticObjects" instance=ExtResource( 2 )]
 position = Vector2( 124, 591 )
+z_index = 0
 
 [node name="StaticObject10" parent="StaticObjects" instance=ExtResource( 2 )]
 position = Vector2( -406, 244 )
+z_index = 0
 
 [node name="StaticObject9" parent="StaticObjects" instance=ExtResource( 2 )]
 position = Vector2( 2108, 316 )
+z_index = 0
 
 [node name="StaticObject8" parent="StaticObjects" instance=ExtResource( 2 )]
 position = Vector2( 1826, 127 )
+z_index = 0
 
 [node name="StaticObject5" parent="StaticObjects" instance=ExtResource( 2 )]
 position = Vector2( 1053, 58 )
+z_index = 0
 
 [node name="StaticObject6" parent="StaticObjects" instance=ExtResource( 2 )]
 position = Vector2( -289, 97 )
+z_index = 0
 
 [node name="StaticObject2" parent="StaticObjects" instance=ExtResource( 2 )]
 position = Vector2( 442, 291 )
+z_index = 0
 
 [node name="StaticObject3" parent="StaticObjects" instance=ExtResource( 2 )]
 position = Vector2( 805, 696 )
+z_index = 0
 
 [node name="StaticObject" parent="StaticObjects" instance=ExtResource( 5 )]
 position = Vector2( 1384, 522 )
@@ -173,3 +182,8 @@ position = Vector2( -235, 513 )
 
 [node name="StaticObject7" parent="StaticObjects" instance=ExtResource( 2 )]
 position = Vector2( 1371, 276 )
+z_index = 0
+
+[node name="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 622.5, 347.5 )
+scale = Vector2( 4.83875, 1.48167 )
