@@ -33,8 +33,8 @@ public class Target : Node2D {
         aCircleShape2D.Radius = radius * 100;
 
         GetNode("Area2D").Connect("body_entered", this, nameof(_on_Area2D_body_entered));
-        GetNode("VisibilityNotifier2D").Connect("screen_entered", this, nameof(removeMarker));
-        GetNode("VisibilityNotifier2D").Connect("screen_exited", this, nameof(addMarker));
+        //GetNode("VisibilityNotifier2D").Connect("screen_entered", this, nameof(removeMarker));
+        //GetNode("VisibilityNotifier2D").Connect("screen_exited", this, nameof(addMarker));
 
         cam = GetNode<Camera2D>("/root/Main/Follower/Camera2D");
     }

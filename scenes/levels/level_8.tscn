@@ -168,13 +168,13 @@ velocity = Vector2( 71, 0 )
 [node name="Spawner12" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1498, 1099 )
 delayInMs = 10000
-distance = 5000
+distance = 1170
 velocity = Vector2( 25, -50 )
 
 [node name="Spawner13" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2325, 1119 )
 delayInMs = 7000
-distance = 5000
+distance = 985
 velocity = Vector2( 25, -50 )
 
 [node name="StaticObject" parent="." instance=ExtResource( 2 )]

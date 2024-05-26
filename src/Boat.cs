@@ -45,7 +45,7 @@ public class Boat : KinematicBody2D {
         
         if (type == -1) { // AI Mode
             if (Position.DistanceSquaredTo(initialPosition) > maxDistance * maxDistance) {
-                GetParent().RemoveChild(this);
+                Deactivate();
             }
             if (collisionResult != null) {
                 if (collisionResult.Collider is Boat boat && boat.type != -1) {
@@ -56,7 +56,7 @@ public class Boat : KinematicBody2D {
                         Position += collisionResult.Remainder;
                         return;
                     }
-                    GetParent().RemoveChild(this);
+                    Deactivate();
                 }
             }
             return;
@@ -79,6 +79,7 @@ public class Boat : KinematicBody2D {
     public void Deactivate() {
         active = false;
         RemoveChild(GetNode<CollisionShape2D>("CollisionShape2D"));
+        RemoveChild(GetNode("Particles2D"));
     }
 
 }
