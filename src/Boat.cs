@@ -53,6 +53,7 @@ public class Boat : KinematicBody2D {
                     GetTree().ReloadCurrentScene();
                 } else {
                     if (collisionResult.Collider is StaticBody2D b && b.Name.Contains("Cloud")) {
+                        Position += collisionResult.Remainder;
                         return;
                     }
                     GetParent().RemoveChild(this);
