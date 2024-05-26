@@ -1,6 +1,5 @@
 using Godot;
-using System;
-using System.Security.Policy;
+using Nordwind;
 
 public class Target : Node2D {
     [Export] private float radius = 100;
@@ -18,22 +17,8 @@ public class Target : Node2D {
     }
 
     public override void _Ready() {
-
-        switch (type) {
-            case 0:
-                color = Colors.Red;
-                break;
-            case 1:
-                color = Colors.Blue;
-                break;
-            case 2:
-                color = Colors.Green;
-                break;
-            default:
-                color = Colors.Red;
-                type = 0;
-                break;
-        }
+        GetNode<Sprite>("BuoyTint").Modulate = Util.getColor(type);
+        color = Util.getColor(type);
         
         GetNode<CollisionShape2D>("Area2D/CollisionShape2D").Shape.Set("Radius", radius);
 

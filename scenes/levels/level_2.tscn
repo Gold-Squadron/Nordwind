@@ -1,14 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Main.cs" type="Script" id=1]
 [ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/components/StaticObject.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/components/Stones.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
-[ext_resource path="res://textures/stein_oder_felsen.png" type="Texture" id=8]
-[ext_resource path="res://textures/wasser.png" type="Texture" id=9]
-[ext_resource path="res://scenes/components/MovingObject.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
 
@@ -17,49 +12,19 @@ script = ExtResource( 1 )
 windDir = Vector2( 1, 0 )
 
 [node name="Boat" parent="." instance=ExtResource( 3 )]
-position = Vector2( 327, 523 )
+position = Vector2( 311, 487 )
 
 [node name="Boat2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 323, 329 )
-
-[node name="Boat3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 326, 709 )
+position = Vector2( 1187, 471 )
 
 [node name="StaticObject" parent="." instance=ExtResource( 4 )]
-position = Vector2( 667, 265 )
-
-[node name="SteinOderFelsen" type="Sprite" parent="."]
-position = Vector2( 461, 454 )
-texture = ExtResource( 8 )
-
-[node name="Wasser" type="Sprite" parent="."]
-visible = false
-position = Vector2( 704, 332 )
-z_index = -1
-texture = ExtResource( 9 )
-
-[node name="StaticObject3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 557, 838 )
-
-[node name="StaticObject2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1203, 427 )
-
-[node name="StaticObject4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1024, 985 )
-scale = Vector2( 0.02, 0.02 )
-
-[node name="Target" parent="." instance=ExtResource( 7 )]
-position = Vector2( -66, 674 )
-radius = 200.0
-
-[node name="MovingObject" parent="." instance=ExtResource( 10 )]
-position = Vector2( 810, 728 )
+position = Vector2( 787, 437 )
 
 [node name="Follower" parent="." instance=ExtResource( 11 )]
-position = Vector2( 328, 521 )
+position = Vector2( 928, 435 )
 
 [node name="Target2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1035, 679 )
+position = Vector2( 1621, 445 )
 radius = 200.0
 
 [node name="HUD" parent="." instance=ExtResource( 12 )]

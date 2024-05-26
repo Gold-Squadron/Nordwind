@@ -19,7 +19,11 @@ public class Main : Node {
         GD.Print("Main Level is initializing.");
 
         latestWindDir = windDir;
-        GetNode("Target").Connect("all_boats_reached_target", this, nameof(_on_Target_all_boats_reached_target));
+        foreach (Node child in GetChildren()) {
+            if (child is Target) {
+                child.Connect("all_boats_reached_target", this, nameof(_on_Target_all_boats_reached_target));
+            }
+        }
         
         lastDirections = new Queue<Vector2>(10);
         for (int i = 0; i < 10; i++) {

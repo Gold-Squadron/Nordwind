@@ -7,7 +7,7 @@ public class LevelMenu : Control {
 	[Export] 
 	public PackedScene btnPrefab;
 
-	[Export] public int levels = 1;
+	[Export] public int levels = 7;
 	
 	public override void _Ready() {
 		HFlowContainer lvlContainer = GetNode<HFlowContainer>("lvls");

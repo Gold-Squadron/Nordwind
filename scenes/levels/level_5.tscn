@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/Main.cs" type="Script" id=1]
+[ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/components/StaticObject.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+windDir = Vector2( 1, 0 )
+windSpeed = 100.0
+
+[node name="Follower" parent="." instance=ExtResource( 11 )]
+position = Vector2( 198, 460 )
+
+[node name="HUD" parent="." instance=ExtResource( 12 )]
+
+[node name="Target" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1592, 467 )
+radius = 140.0
+
+[node name="StaticObject2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 959, 440 )
+
+[node name="StaticObject" parent="StaticObject2" instance=ExtResource( 2 )]
+position = Vector2( -216, 618 )
+
+[node name="StaticObject2" parent="StaticObject2" instance=ExtResource( 2 )]
+position = Vector2( -72, -303 )
+
+[node name="StaticObject3" parent="StaticObject2" instance=ExtResource( 2 )]
+position = Vector2( 143, 411 )
+
+[node name="StaticObject4" parent="StaticObject2" instance=ExtResource( 2 )]
+position = Vector2( -61, -231 )
+
+[node name="StaticObject5" parent="StaticObject2" instance=ExtResource( 2 )]
+position = Vector2( 589, 637 )
+
+[node name="StaticObject6" parent="StaticObject2" instance=ExtResource( 2 )]
+position = Vector2( 834, 244 )
+
+[node name="StaticObject7" parent="StaticObject2" instance=ExtResource( 2 )]
+position = Vector2( -80, -386 )
+
+[node name="Boat" parent="." instance=ExtResource( 3 )]
+position = Vector2( 257, 679 )
+
+[node name="Boat2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -186, 463 )
+
+[node name="Boat3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 398, 302 )

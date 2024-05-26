@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/Main.cs" type="Script" id=1]
+[ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/components/MovingObject.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/components/StaticObject.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+windDir = Vector2( 1, 0 )
+windSpeed = 120.0
+
+[node name="MovingObject" parent="." instance=ExtResource( 4 )]
+position = Vector2( 628, 496 )
+
+[node name="Target2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -674, 487 )
+radius = 160.0
+type = 1
+
+[node name="Follower" parent="." instance=ExtResource( 11 )]
+position = Vector2( 621, 496 )
+
+[node name="HUD" parent="." instance=ExtResource( 12 )]
+
+[node name="Target" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1865, 512 )
+radius = 140.0
+
+[node name="Boat" parent="." instance=ExtResource( 3 )]
+position = Vector2( 928, 526 )
+type = 1
+
+[node name="Boat2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 303, 535 )
+
+[node name="StaticObject" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1395, 532 )
+
+[node name="StaticObject" parent="StaticObject" instance=ExtResource( 2 )]
+position = Vector2( -953, -241 )
+
+[node name="StaticObject2" parent="StaticObject" instance=ExtResource( 2 )]
+position = Vector2( -590, 164 )
+
+[node name="StaticObject3" parent="StaticObject" instance=ExtResource( 2 )]
+position = Vector2( -1271, 59 )
+
+[node name="StaticObject4" parent="StaticObject" instance=ExtResource( 5 )]
+position = Vector2( -1636, -54 )
+
+[node name="StaticObject7" parent="StaticObject" instance=ExtResource( 2 )]
+position = Vector2( -24, -256 )
+
+[node name="StaticObject8" parent="StaticObject" instance=ExtResource( 2 )]
+position = Vector2( 431, -405 )
+
+[node name="StaticObject6" parent="StaticObject" instance=ExtResource( 2 )]
+position = Vector2( -1684, -435 )
+
+[node name="StaticObject5" parent="StaticObject" instance=ExtResource( 2 )]
+position = Vector2( -342, -474 )
+
+[node name="StaticObject9" parent="StaticObject" instance=ExtResource( 2 )]
+position = Vector2( 728, -217 )
+
+[node name="StaticObject10" parent="StaticObject" instance=ExtResource( 2 )]
+position = Vector2( -1801, -288 )
