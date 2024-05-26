@@ -10,6 +10,7 @@
 [ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
 
 [node name="Main" type="Node2D"]
+position = Vector2( 155, 64 )
 script = ExtResource( 1 )
 windDir = Vector2( 1, 0 )
 
@@ -33,9 +34,8 @@ position = Vector2( 388, 1096 )
 [node name="Target" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1218, 571 )
 radius = 200.0
-type = 1
 
 [node name="Follower" parent="." instance=ExtResource( 11 )]
-position = Vector2( 328, 521 )
+position = Vector2( 485, 764 )
 
 [node name="HUD" parent="." instance=ExtResource( 12 )]

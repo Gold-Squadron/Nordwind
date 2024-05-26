@@ -1,12 +1,13 @@
 using Godot;
 using System;
 using System.Data.SqlClient;
+using Nordwind;
 
 public class Boat : KinematicBody2D {
 
-    private const float MAX_SPEED = 40;
+    [Export] private float MAX_SPEED = 40;
     private Main main;
-    [Export] private Vector2 velocity = Vector2.Down;
+    [Export] private Vector2 velocity;
 
     [Export] public int type = 0;
     
@@ -15,9 +16,10 @@ public class Boat : KinematicBody2D {
     
     public override void _Ready() {
         main = GetNode<Main>("/root/Main");
-        velocity = velocity * (float)(MAX_SPEED * 0.8f);
+        velocity = main.windDir;// * (float)(MAX_SPEED * 0.3f);
         Main.AcitveBoatCounter++;
-        
+
+        GetNode<Sprite>("Sprite/Sail").Modulate = Util.getColor(type).LinearInterpolate(Colors.Beige, 0.45f);
     }
 
     public override void _Process(float delta) {

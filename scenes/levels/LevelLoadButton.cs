@@ -8,7 +8,7 @@ public class LevelLoadButton : Button  {
     private int cnt;
 
     public void setLevel(int x) {
-        scene = ResourceLoader.Load<PackedScene>("res://scenes/levels/Level_" + x + ".tscn");
+        scene = ResourceLoader.Load<PackedScene>("res://scenes/levels/level_" + x + ".tscn");
         Text = x.ToString();
         cnt = x;
     }

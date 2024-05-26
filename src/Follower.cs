@@ -35,7 +35,15 @@ public class Follower : Node2D {
     
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
   public override void _Process(float delta) {
-      Position = CalculateMiddle();
+      Vector2 middle = CalculateMiddle();
+      foreach (var boat in boats) {
+          Vector2 distance = (Position - boat.Position).Abs();
+
+          if (distance.x > 600 || distance.y > 300) {
+              Position = middle;
+              return;
+          }
+      }
   }
   
   
