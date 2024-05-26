@@ -11,8 +11,9 @@ config_version=4
 [application]
 
 config/name="Nordwind"
-run/main_scene="res://scenes/levels/level_8.tscn"
+run/main_scene="res://scenes/levels.tscn"
 boot_splash/show_image=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]
@@ -27,6 +28,10 @@ window/size/fullscreen=true
 
 version_control_autoload_on_startup=true
 version_control_plugin_name="GitAPI"
+
+[global]
+
+color=false
 
 [gui]
 
