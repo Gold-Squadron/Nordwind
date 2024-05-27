@@ -77,11 +77,15 @@ public class Boat : KinematicBody2D {
     }
 
     public void Deactivate() {
+        if(active == false) return;
         active = false;
-        var collider = GetNode("CollisionShape2D");
-        if(collider != null) RemoveChild(collider);
-        var particles = GetNode("Particles2D");
-        RemoveChild(particles);
+        try {
+            var collider = GetNode("CollisionShape2D");
+            if (collider != null) RemoveChild(collider);
+            var particles = GetNode("Particles2D");
+            RemoveChild(particles);
+        } catch (Exception e) {
+        }
     }
 
 }

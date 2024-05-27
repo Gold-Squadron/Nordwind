@@ -25,7 +25,7 @@ distance = 2000
 velocity = Vector2( 0, 55 )
 
 [node name="Follower" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1041, 515 )
+position = Vector2( 1488, 534 )
 
 [node name="HUD" parent="." instance=ExtResource( 12 )]
 

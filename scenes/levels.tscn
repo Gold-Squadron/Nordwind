@@ -19,17 +19,18 @@ btnPrefab = ExtResource( 4 )
 [node name="Label" type="Label" parent="."]
 margin_left = 53.0
 margin_top = 13.0
-margin_right = 685.0
+margin_right = 1553.0
 margin_bottom = 133.0
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
 text = "Levels"
+align = 1
 
 [node name="lvls" type="HFlowContainer" parent="."]
-margin_left = 82.0
+margin_left = 350.0
 margin_top = 145.0
-margin_right = 2660.0
-margin_bottom = 1521.0
+margin_right = 1150.0
+margin_bottom = 1520.96
 
 [node name="Sprite" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2943.5, 1938.5 )

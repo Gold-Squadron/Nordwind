@@ -1,164 +1,263 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://src/Main.cs" type="Script" id=1]
-[ext_resource path="res://scenes/components/MovingObject.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/components/StaticObject.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/components/Spawner.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/components/Water.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
-[ext_resource path="res://textures/wasser.png" type="Texture" id=9]
-[ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/components/Spawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Main.cs" type="Script" id=6]
+[ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/components/CloudEdge.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/components/CloudCorner.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/components/CloudEdge5.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/components/CloudEdge3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/components/Water.tscn" type="PackedScene" id=13]
 
 [node name="Main" type="Node2D"]
-position = Vector2( 155, 64 )
-script = ExtResource( 1 )
+script = ExtResource( 6 )
 windDir = Vector2( 1, 0 )
+windSpeed = 120.0
 
-[node name="Boat" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1182, 1096 )
-MAX_SPEED = 60.0
-velocity = Vector2( 1, 0 )
+[node name="Follower" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2881, 569 )
 
-[node name="Boat2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1298, 1223 )
-MAX_SPEED = 60.0
-velocity = Vector2( 1, 0 )
-type = 1
+[node name="HUD" parent="." instance=ExtResource( 2 )]
 
-[node name="Boat3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1383, 1033 )
-MAX_SPEED = 60.0
-velocity = Vector2( 1, 0 )
-type = 2
-
-[node name="Wasser" type="Sprite" parent="."]
-visible = false
-position = Vector2( 704, 332 )
-z_index = -1
-texture = ExtResource( 9 )
-
-[node name="StaticObject" parent="." instance=ExtResource( 4 )]
-position = Vector2( 479, 612 )
-
-[node name="StaticObject3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2982, 967 )
-
-[node name="StaticObject13" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3270, 222 )
-
-[node name="StaticObject2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 919, 1863 )
-
-[node name="StaticObject14" parent="." instance=ExtResource( 4 )]
-position = Vector2( 455, 2603 )
-
-[node name="StaticObject15" parent="." instance=ExtResource( 4 )]
-position = Vector2( -1725, 2805 )
-
-[node name="StaticObject4" parent="." instance=ExtResource( 4 )]
-position = Vector2( -147, 1359 )
-
-[node name="StaticObject5" parent="." instance=ExtResource( 4 )]
-position = Vector2( -815, 2091 )
-
-[node name="StaticObject6" parent="." instance=ExtResource( 4 )]
-position = Vector2( -1018, 466 )
-
-[node name="StaticObject11" parent="." instance=ExtResource( 4 )]
-position = Vector2( -1640, 1558 )
-
-[node name="StaticObject12" parent="." instance=ExtResource( 4 )]
-position = Vector2( -2173, 688 )
-
-[node name="StaticObject7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1484, 187 )
-
-[node name="StaticObject8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1941, 1641 )
-
-[node name="MovingObject" parent="." instance=ExtResource( 2 )]
-position = Vector2( 556, 1367 )
-
-[node name="MovingObject2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1953, 1132 )
-scale = Vector2( 0.01253, 0.00321423 )
-
-[node name="MovingObject3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1031, 657 )
-
-[node name="MovingObject4" parent="." instance=ExtResource( 2 )]
-position = Vector2( -822, 913 )
-
-[node name="MovingObject5" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1351, 1943 )
-
-[node name="MovingObject6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1009, 2445 )
-
-[node name="MovingObject7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2627, 1585 )
-
-[node name="Spawner" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1366, 1480 )
+[node name="Spawner2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2097, 87 )
 scale = Vector2( 0.02, 0.02 )
-
-[node name="Spawner5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1522, 1236 )
-scale = Vector2( 0.02, 0.02 )
-delayInMs = 10000
-distance = 200000
-
-[node name="Spawner3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 4072, 611 )
-scale = Vector2( 0.02, 0.02 )
-delayInMs = 10000
-distance = 200000
-velocity = Vector2( -90, 0 )
-
-[node name="Spawner4" parent="." instance=ExtResource( 5 )]
-position = Vector2( -1560, 192 )
-scale = Vector2( 0.02, 0.02 )
-delayInMs = 10000
-distance = 200000
 velocity = Vector2( 0, -90 )
 
-[node name="Spawner2" parent="." instance=ExtResource( 5 )]
-position = Vector2( -3240, 3374 )
+[node name="Spawner" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1706, 1101 )
 scale = Vector2( 0.02, 0.02 )
-delayInMs = 10000
-distance = 200000
-velocity = Vector2( 90, 90 )
 
-[node name="StaticObject16" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3227, 2291 )
+[node name="Target2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2633, 363 )
 
-[node name="StaticObject9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2227, 568 )
-
-[node name="StaticObject10" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1713, 2467 )
-
-[node name="Target" parent="." instance=ExtResource( 7 )]
-position = Vector2( 4033, 172 )
-radius = 200.0
-type = 1
-
-[node name="Target2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1046, 2985 )
-radius = 200.0
+[node name="Target4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1927, 551 )
 type = 2
 
-[node name="Target3" parent="." instance=ExtResource( 7 )]
-position = Vector2( -2614, 929 )
-radius = 200.0
+[node name="Target3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3101, 774 )
+type = 1
 
-[node name="Follower" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1293, 979 )
+[node name="Boat" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1070, 738 )
+MAX_SPEED = 60.0
 
-[node name="HUD" parent="." instance=ExtResource( 12 )]
+[node name="Boat2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 806, 721 )
+MAX_SPEED = 60.0
+type = 1
 
-[node name="Sprite" parent="." instance=ExtResource( 6 )]
-position = Vector2( -77.5022, 1037 )
-scale = Vector2( 106.206, 91.4333 )
+[node name="Boat3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 935, 788 )
+MAX_SPEED = 60.0
+type = 2
+
+[node name="Node" type="Node" parent="."]
+
+[node name="StaticObject" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1368, 511 )
+
+[node name="StaticObject2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1585, 509 )
+
+[node name="StaticObject5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2194, 513 )
+
+[node name="StaticObject19" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2188, 383 )
+
+[node name="StaticObject29" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2185, 313 )
+
+[node name="StaticObject20" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2189, 449 )
+
+[node name="StaticObject9" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1661, 513 )
+
+[node name="StaticObject17" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1663, 649 )
+
+[node name="StaticObject28" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1658, 716 )
+
+[node name="StaticObject18" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1661, 577 )
+
+[node name="StaticObject3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1504, 513 )
+
+[node name="StaticObject10" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2338, 509 )
+
+[node name="StaticObject11" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2685, 513 )
+
+[node name="StaticObject12" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2614, 515 )
+
+[node name="StaticObject13" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2544, 517 )
+
+[node name="StaticObject14" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2478, 511 )
+
+[node name="StaticObject15" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2414, 513 )
+
+[node name="StaticObject16" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2257, 513 )
+
+[node name="StaticObject21" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2833, 513 )
+
+[node name="StaticObject30" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2590, 867 )
+
+[node name="StaticObject33" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2692, 921 )
+
+[node name="StaticObject41" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2788, 581 )
+
+[node name="StaticObject39" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2895, 827 )
+
+[node name="StaticObject38" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2468, 929 )
+
+[node name="StaticObject37" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2810, 786 )
+
+[node name="StaticObject32" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2665, 604 )
+
+[node name="StaticObject31" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2474, 589 )
+
+[node name="StaticObject22" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3180, 517 )
+
+[node name="StaticObject23" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3109, 519 )
+
+[node name="StaticObject24" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3039, 521 )
+
+[node name="StaticObject25" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2973, 515 )
+
+[node name="StaticObject26" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2909, 517 )
+
+[node name="StaticObject27" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2752, 517 )
+
+[node name="StaticObject4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1438, 511 )
+
+[node name="CloudBorder" type="Node2D" parent="."]
+position = Vector2( 1219, 273 )
+
+[node name="CloudEdge20" parent="CloudBorder" instance=ExtResource( 12 )]
+position = Vector2( -1115, -127 )
+
+[node name="CloudEdge6" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( 446, 716 )
+rotation = 3.14159
+
+[node name="CloudEdge5" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( -204, 716 )
+rotation = 3.14159
+
+[node name="CloudCorner" parent="CloudBorder" instance=ExtResource( 10 )]
+position = Vector2( -1211, 716 )
+rotation = -1.5708
+
+[node name="CloudCorner2" parent="CloudBorder" instance=ExtResource( 10 )]
+position = Vector2( -1211, -128 )
+
+[node name="CloudEdge9" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( -1210, -31 )
+rotation = -1.5708
+
+[node name="CloudEdge3" parent="CloudBorder" instance=ExtResource( 12 )]
+position = Vector2( -1210, 359 )
+rotation = -1.5708
+
+[node name="CloudEdge10" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( -74, -127 )
+
+[node name="CloudEdge8" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( -724, -127 )
+
+[node name="CloudEdge11" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( 576, -127 )
+
+[node name="CloudEdge" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( 1226, -127 )
+
+[node name="CloudEdge14" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( 1096, 716 )
+rotation = -3.14159
+
+[node name="CloudEdge2" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( -1210, 489 )
+rotation = -1.5708
+
+[node name="CloudEdge7" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( -1209, 619 )
+rotation = -1.5708
+
+[node name="CloudEdge12" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( 1746, 716 )
+rotation = 3.14159
+
+[node name="CloudCorner3" parent="CloudBorder" instance=ExtResource( 10 )]
+position = Vector2( 2623, 717 )
+rotation = -3.14159
+
+[node name="CloudEdge4" parent="CloudBorder" instance=ExtResource( 12 )]
+position = Vector2( 2136, 716 )
+rotation = 3.14159
+
+[node name="CloudEdge13" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( 2621, 100 )
+rotation = 1.5708
+
+[node name="CloudEdge16" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( 2006, -127 )
+
+[node name="CloudEdge15" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( 1356, -127 )
+
+[node name="CloudEdge17" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( 2136, -127 )
+
+[node name="CloudEdge18" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( 2621, -30 )
+rotation = 1.5708
+
+[node name="CloudEdge19" parent="CloudBorder" instance=ExtResource( 12 )]
+position = Vector2( -854, 716 )
+rotation = 3.14159
+
+[node name="CloudCorner4" parent="CloudBorder" instance=ExtResource( 10 )]
+position = Vector2( 2623, -127 )
+rotation = 1.5708
+
+[node name="CloudEdge21" parent="CloudBorder" instance=ExtResource( 12 )]
+position = Vector2( 2266, -127 )
+
+[node name="CloudEdge22" parent="CloudBorder" instance=ExtResource( 12 )]
+position = Vector2( 2526, 716 )
+rotation = 3.14159
+
+[node name="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1926, 574 )
+scale = Vector2( 4.83875, 1.48167 )
