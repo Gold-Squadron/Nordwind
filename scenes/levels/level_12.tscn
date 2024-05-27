@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Main.cs" type="Script" id=1]
 [ext_resource path="res://scenes/components/MovingObject.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/components/Boat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/components/StaticObject.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/components/Spawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/components/Water.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/components/Target.tscn" type="PackedScene" id=7]
 [ext_resource path="res://textures/wasser.png" type="Texture" id=9]
 [ext_resource path="res://scenes/components/Follower.tscn" type="PackedScene" id=11]
@@ -157,3 +158,7 @@ radius = 200.0
 position = Vector2( 1293, 979 )
 
 [node name="HUD" parent="." instance=ExtResource( 12 )]
+
+[node name="Sprite" parent="." instance=ExtResource( 6 )]
+position = Vector2( -77.5022, 1037 )
+scale = Vector2( 106.206, 91.4333 )

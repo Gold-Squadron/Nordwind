@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/components/Spawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/components/HUD.tscn" type="PackedScene" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://src/Main.cs" type="Script" id=6]
 [ext_resource path="res://scenes/components/MovingObject.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/components/Fels.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/components/CloudEdge.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/components/CloudCorner.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/components/CloudEdge5.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/components/CloudEdge3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/components/Water.tscn" type="PackedScene" id=13]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 6 )
@@ -180,3 +185,104 @@ position = Vector2( 1700, 511 )
 
 [node name="MovingObject" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1135, 412 )
+
+[node name="CloudBorder" type="Node2D" parent="."]
+position = Vector2( 1219, 273 )
+
+[node name="CloudEdge20" parent="CloudBorder" instance=ExtResource( 12 )]
+position = Vector2( -1115, -127 )
+
+[node name="CloudEdge6" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( 446, 716 )
+rotation = 3.14159
+
+[node name="CloudEdge5" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( -204, 716 )
+rotation = 3.14159
+
+[node name="CloudCorner" parent="CloudBorder" instance=ExtResource( 10 )]
+position = Vector2( -1211, 716 )
+rotation = -1.5708
+
+[node name="CloudCorner2" parent="CloudBorder" instance=ExtResource( 10 )]
+position = Vector2( -1211, -128 )
+
+[node name="CloudEdge9" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( -1210, -31 )
+rotation = -1.5708
+
+[node name="CloudEdge3" parent="CloudBorder" instance=ExtResource( 12 )]
+position = Vector2( -1210, 359 )
+rotation = -1.5708
+
+[node name="CloudEdge10" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( -74, -127 )
+
+[node name="CloudEdge8" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( -724, -127 )
+
+[node name="CloudEdge11" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( 576, -127 )
+
+[node name="CloudEdge" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( 1226, -127 )
+
+[node name="CloudEdge14" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( 1096, 716 )
+rotation = -3.14159
+
+[node name="CloudEdge2" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( -1210, 489 )
+rotation = -1.5708
+
+[node name="CloudEdge7" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( -1209, 619 )
+rotation = -1.5708
+
+[node name="CloudEdge12" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( 1746, 716 )
+rotation = 3.14159
+
+[node name="CloudCorner3" parent="CloudBorder" instance=ExtResource( 10 )]
+position = Vector2( 2623, 717 )
+rotation = -3.14159
+
+[node name="CloudEdge4" parent="CloudBorder" instance=ExtResource( 12 )]
+position = Vector2( 2136, 716 )
+rotation = 3.14159
+
+[node name="CloudEdge13" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( 2621, 100 )
+rotation = 1.5708
+
+[node name="CloudEdge16" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( 2006, -127 )
+
+[node name="CloudEdge15" parent="CloudBorder" instance=ExtResource( 11 )]
+position = Vector2( 1356, -127 )
+
+[node name="CloudEdge17" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( 2136, -127 )
+
+[node name="CloudEdge18" parent="CloudBorder" instance=ExtResource( 9 )]
+position = Vector2( 2621, -30 )
+rotation = 1.5708
+
+[node name="CloudEdge19" parent="CloudBorder" instance=ExtResource( 12 )]
+position = Vector2( -854, 716 )
+rotation = 3.14159
+
+[node name="CloudCorner4" parent="CloudBorder" instance=ExtResource( 10 )]
+position = Vector2( 2623, -127 )
+rotation = 1.5708
+
+[node name="CloudEdge21" parent="CloudBorder" instance=ExtResource( 12 )]
+position = Vector2( 2266, -127 )
+
+[node name="CloudEdge22" parent="CloudBorder" instance=ExtResource( 12 )]
+position = Vector2( 2526, 716 )
+rotation = 3.14159
+
+[node name="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1920, 572 )
+scale = Vector2( 4.83875, 1.48167 )

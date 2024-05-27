@@ -15,7 +15,7 @@ public class Main : Node {
     
     public static int AcitveBoatCounter = 0;
 
-    private Control pauseMenu;
+    private CanvasLayer pauseMenu;
 
     // private int targetCount = 0; 
 
@@ -34,7 +34,7 @@ public class Main : Node {
             lastDirections.Enqueue(latestWindDir * 40);
         }
 
-        pauseMenu = ResourceLoader.Load<PackedScene>("res://scenes/PauseMenu.tscn").Instance<Control>();
+        pauseMenu = ResourceLoader.Load<PackedScene>("res://scenes/PauseMenu.tscn").Instance<CanvasLayer>();
         AddChild(pauseMenu);
     }
 

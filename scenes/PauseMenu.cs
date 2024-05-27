@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class PauseMenu : Control {
+public class PauseMenu : CanvasLayer {
 
     private Button unpause;
     private Button levels;
